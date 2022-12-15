@@ -13,17 +13,17 @@ app = Flask(__name__, static_url_path='', static_folder='static')
 
 # Arrivals array
 arrivals=[
-        {"ID":1, "Airline":"AerLingus", "Origin": "JFK", "Destination":"SNN", "Flight Number":"EI110" },
-        {"ID":2, "Airline":"Ryanair", "Origin": "STN", "Destination":"SNN", "Flight Number":"FR310" },
-        {"ID":3, "Airline":"AerLingus", "Origin": "LHR", "Destination":"SNN", "Flight Number":"EI381" },
-        {"ID":4, "Airline":"Air Canada", "Origin": "YYZ", "Destination":"SNN", "Flight Number":"AC856" }, 
-        {"ID":5, "Airline":"Ryanair", "Origin": "LGW", "Destination":"SNN", "Flight Number":"FR1183" },
-        {"ID":6, "Airline":"Delta Airlines", "Origin": "JFK", "Destination":"SNN", "Flight Number":"DL206" },
-        {"ID":7, "Airline":"American Airlines", "Origin": "PHL", "Destination":"SNN", "Flight Number":"AA089" },
-        {"ID":8, "Airline":"Lufthansa", "Origin": "FRA", "Destination":"SNN", "Flight Number":"LH8045" }, 
-        {"ID":9, "Airline":"United Airlines", "Origin": "EWR", "Destination":"SNN", "Flight Number":"UA022" },
-        {"ID":10, "Airline":"Ryanair", "Origin": "MAN", "Destination":"SNN", "Flight Number":"FR8159" },
-        {"ID":11, "Airline":"Ryanair", "Origin": "FUE", "Destination":"SNN", "Flight Number":"FR3369" }
+        {"id":1, "airline":"AerLingus", "origin": "JFK", "destination":"SNN", "flightnumber":"EI110" },
+        {"id":2, "airline":"Ryanair", "origin": "STN", "destination":"SNN", "flightnumber":"FR310" },
+        {"id":3, "airline":"AerLingus", "origin": "LHR", "destination":"SNN", "flightnumber":"EI381" },
+        {"id":4, "airline":"Air Canada", "origin": "YYZ", "destination":"SNN", "flightnumber":"AC856" }, 
+        {"id":5, "airline":"Ryanair", "origin": "LGW", "destination":"SNN", "flightnumber":"FR1183" },
+        {"id":6, "airline":"Delta Airlines", "origin": "JFK", "destination":"SNN", "flightnumber":"DL206" },
+        {"id":7, "airline":"American Airlines", "origin": "PHL", "destination":"SNN", "flightnumber":"AA089" },
+        {"id":8, "airline":"Lufthansa", "origin": "FRA", "destination":"SNN", "flightnumber":"LH8045" }, 
+        {"id":9, "airline":"United Airlines", "origin": "EWR", "destination":"SNN", "flightnumber":"UA022" },
+        {"id":10, "airline":"Ryanair", "origin": "MAN", "destination":"SNN", "flightnumber":"FR8159" },
+        {"id":11, "airline":"Ryanair", "origin": "FUE", "destination":"SNN", "flightnumber":"FR3369" }
         ]
 
  
@@ -42,23 +42,6 @@ def index():
 def getAll():
     #return "served by Get All()" #debug
     return jsonify(arrivals)
-
-
-'''
-# FIND ARRIVAL BY ID 
-# curl http://127.0.0.1:5000/arrivals/2
-@app.route('/arrivals/<int:id>', methods=['GET'])
-def findById(id):
-    #return "served by find by id with id " + str(id) # debug
-
-    # Lambda searches arrivals and only return back specific id.
-    foundArrivals = list(filter (lambda t : t["ID"]== id, arrivals))
-
-    if len(foundArrivals) == 0:
-        return jsonify({}), 204
-
-    return jsonify(foundArrivals[0])
-'''
 
 
 # CREATE AN ARRIVAL
