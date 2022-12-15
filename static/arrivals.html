@@ -2,392 +2,331 @@
 <!-- Author: Sarah McNelis - G00398343 -->
 
 <html>
+
 	<head>
-		<title>Arrivals</title>
+	
+		<title>Arrivals at Shannon Airport</title>
 
 		<!-- Ajax -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
-		<!-- Bootstrap -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<!-- CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 		<!-- JavaScript Bundle with Popper -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-		
-		
+
 	</head>
 	
-	<body>
 
+	<body>
+	
 		<!-- Pic -->
 		<div align="center">
 			<img src="snnairport.jpeg" alt="Shannon Airport Logo" width="450" height="250">
 		</div>
+
+		<!-- CARD -->
+		<div class="card">
 		
-		<!-- ACCORDION -->
-		<div class="accordion" id="accordionPanelsStayOpenExample">
+			<!-- Card header -->
+			<div class="card-header">
+				<h3 align="center">Arrivals at Shannon Airport</h3>
+			</div>
 
-			<!-- GET ALL -->
-			<div class="accordion-item">
-				<h1 class="accordion-header" id="panelsStayOpen-headingOne">
-					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" >
-					View Arrivals
-					</button>
-				</h1>
-				<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-					<div class="accordion-body" id="div">
-						<h2>Arrivals at Shannon Airport</h2>
-						<table border="2" class="table table-hover" id="bookTable">
-			
+			<!-- Card body -->
+			<div class="card-body">
+				<div>
+					<table id="example" border="2" class="table table-hover">
+
+						<thead>
+						
 							<tr>
-								
-								<th>ID</th>
-								<th>Airline</th> 
-								<th>Origin</th>
-								<th>Destination</th>
-								<th>Flight Number</th>
-								
+								<th scope="col">ID</th>
+								<th scope="col">Airline</th>
+								<th scope="col">Origin</th>
+								<th scope="col">Destination</th>
+								<th scope="col">Flight Number</th>
+								<th scope="col">Update</th>
+								<th scope="col">Delete</th>
 							</tr>
 							
-							<tr id="1">
-							
-								<td>1</td>
-								<td>AerLingus</td>
-								<td>JFK</td>
-								<td>SNN</td>
-								<td>EI110</td>
-
-							</tr>
-							
-							<tr id="2">
-								
-								<td>2</td>
-								<td>Ryanair</td>
-								<td>STN</td>
-								<td>SNN</td>
-								<td>FR310</td>
-
-							</tr>
-							
-							<tr id="3">
-							
-								<td>3</td>
-								<td>AerLingus</td>
-								<td>LHR</td>
-								<td>SNN</td>
-								<td>EI381</td>
-
-							</tr>
-							
-							<tr id="4">
-							
-								<td>4</td>
-								<td>Air Canada</td>
-								<td>YYZ</td>
-								<td>SNN</td>
-								<td>AC856</td>
-
-							</tr>
-							
-							<tr id="5">
-							
-								<td>5</td>
-								<td>Ryanair</td>
-								<td>LGW</td>
-								<td>SNN</td>
-								<td>FR1183</td>
-
-							</tr>
-
-							<tr id="6">
-							
-								<td>6</td>
-								<td>Delta Airlines</td>
-								<td>ATL</td>
-								<td>SNN</td>
-								<td>DL206</td>
-
-							</tr>
-
-							<tr id="7">
-							
-								<td>7</td>
-								<td>American Airlines</td>
-								<td>PHL</td>
-								<td>SNN</td>
-								<td>AA089</td>
-
-							</tr>
-							
-							<tr id="8">
-							
-								<td>8</td>
-								<td>Lufthansa</td>
-								<td>FRA</td>
-								<td>SNN</td>
-								<td>LH8045</td>
-
-							</tr>
+						</thead>
 						
-							<tr id="9">
-							
-								<td>9</td>
-								<td>United Airlines</td>
-								<td>EWR</td>
-								<td>SNN</td>
-								<td>UA022</td>
+						<tbody id="myTable"></tbody>
+						
+					</table>
+				</div>
+			</div>
 
-							</tr>
-							
-							<tr id="10">
-							
-								<td>10</td>
-								<td>Ryanair</td>
-								<td>MAN</td>
-								<td>SNN</td>
-								<td>FR8159</td>
-
-							</tr>
-							
-							<tr id="11">
-								
-								<td>11</td>
-								<td>Ryanair</td>
-								<td>FUE</td>
-								<td>SNN</td>
-								<td>FR3369</td>
-
-							</tr>
+			<!-- Card footer -->
+			<div class="card-footer">
 				
-						</table>
-					</div>
+				<div>
+					<button id="showCreateButton" onclick="showCreate()" type="button" class="btn btn-secondary">Create Arrival</button><br/><br/>
+							
 				</div>
-			</div>
-
-			<!-- CREATE -->
-			<div class="accordion-item">
-				<h1 class="accordion-header" id="flush-headingTwo">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-					Create Arrival
-					</button>
-				</h1>
+						
+				<div id="createUpdateForm" style="display:none" >
 				
-				<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+					<h2><span id="createLabel">Create an</span> <span id="updateLabel">Update an</span> Arrival</h2>
+				
+					<input type="hidden" name="id"/><br/>
+					Airline <input type="text" name="airline"><br/>
+					Origin <input type="text" name="origin"><br/>
+					Destination <input type="text" name="destination"><br/>
+					Flight Number <input type="text" name="flightnumber"><br/><br>	
 					
-					<div class="accordion-body">
-						If you would like to create an arrival please click the button below.<br><br>
-						
-						<div>
-							<button id="button-showCreate" onclick="showCreate()" type="button" class="btn btn-info">Create Arrival</button><br/><br/>
-						</div>
-						
-						<div id="createUpdateForm" style="display:none">
-						
-							<!-- spans are like divs but do not go onto a new line -->
-							<h2><span id="createLabel">Create an</span> <span id="updateLabel">Update an</span> Arrival</h2>
-							
-							Id <input type="text" name="id"><br/>
-							Airline <input type="text" name="airline"><br/>
-							Origin <input type="text" name="origin"><br/>
-							Destination <input type="text" name="destination"><br/>
-							Flight Number <input type="text" name="flightnumber"><br/><br>	
-							
-							<span><button id="button-doCreate" onclick="doCreate()" type="button" class="btn btn-info">Create</button></span>
-							<span><button id="button-doUpdate" onclick="doUpdate()" type="button" class="btn btn-info">Update</button></span>
-							 <!-- "display:none" will make it hidden-->
+					<span><button id="doCreateButton" onclick="doCreate()" type="button" class="btn btn-secondary">Create</button></span>
+					<span><button id="doUpdateButton" onclick="doUpdate()"type="button" class="btn btn-secondary">Update</button></span>
+					 
 
-						</div>
-					</div>
 				</div>
-			</div>
-
-			<!-- UPDATE -->
-			<div class="accordion-item">
-				<h1 class="accordion-header" id="flush-headingThree">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-					Update Arrival
-					</button>
-				</h1>
-				<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-					
-					<div class="accordion-body">
-						If you would like to update an arrival please click the button below.<br><br>
-					
-						<button onclick="showUpdate(this)">Update</button>
-
-			
-			
-					</div>
-				</div>
-			</div>
-
-			<!-- DELETE -->
-			<div class="accordion-item">
-				<h1 class="accordion-header" id="flush-headingFour">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-					Delete Arrival
-					</button>
-				</h1>			
-				<div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-					<div class="accordion-body">If you would like to delete an arrival please click the button below.<br><br>
-					
-					<button onclick="">Delete</button>
-					
-					</div>
-				</div>
+				
 			</div>
 			
 		</div>
 
-
-	</body>
-	<script>
-	
+		<script>
+		
+			// Main function
+			function init(){
+			getAll()
+			}
+			
+// ****************************************************************************************************************8
 	function showCreate(){
-		document.getElementById("createUpdateForm").style.display = "block"
-		
-		document.getElementById("button-doCreate").style.display = "block"
-		document.getElementById("button-doUpdate").style.display = "none"
-		document.getElementById("createLabel").style.display = "inline"
-		document.getElementById("updateLabel").style.display = "none"
+        document.getElementById('showCreateButton').style.display="none"
+        document.getElementById('myTable').style.display="none"
+        document.getElementById('createUpdateForm').style.display="block"
 
-		document.getElementById("button-showCreate").style.display = "none"
-		document.getElementById("bookTable").style.display = "none"
-		
-	}
+        document.getElementById('createLabel').style.display="inline"
+        document.getElementById('updateLabel').style.display="none"
+
+        document.getElementById('doCreateButton').style.display="block"
+        document.getElementById('doUpdateButton').style.display="none"
+
+    }
 	
-	function showUpdate(buttonElement){
-		document.getElementById("createUpdateForm").style.display = "block"
-
-		document.getElementById("button-doCreate").style.display = "none"
-		document.getElementById("button-doUpdate").style.display = "block"
-		document.getElementById("createLabel").style.display = "none"
-		document.getElementById("updateLabel").style.display = "inline"
-
-		document.getElementById("button-showCreate").style.display = "none"
-		document.getElementById("bookTable").style.display = "none"
-
-		rowElement= buttonElement.parentNode.parentNode
-		book = getBookFromRow(rowElement)
-		//console.log("updating")
-		//console.log(book)
-		populateFormWithBook(book)
-
-	}
-
-	function showViewall(){
-		document.getElementById("createUpdateForm").style.display = "none"
-	   
-		document.getElementById("button-showCreate").style.display = "block"
-		document.getElementById("bookTable").style.display = "block"
-		
-	}
+    function showViewAll(){
+        document.getElementById('showCreateButton').style.display="block"
+        document.getElementById('myTable').style.display="block"
+        document.getElementById('createUpdateForm').style.display="none"
+    }
 	
-	function clearForm(){
-		var form = document.getElementById('createUpdateForm')
+    function showUpdate(buttonElement){
+        document.getElementById('showCreateButton').style.display="none"
+        document.getElementById('myTable').style.display="none"
+        document.getElementById('createUpdateForm').style.display="block"
+        document.getElementById('createLabel').style.display="none"
+        document.getElementById('updateLabel').style.display="inline"
+        document.getElementById('doCreateButton').style.display="none"
+        document.getElementById('doUpdateButton').style.display="block"
 
-		form.querySelector('input[name="id"]').disabled = false
-		form.querySelector('input[name="id"]').value  =''
-		form.querySelector('input[name="airline"]').value=''
-		form.querySelector('input[name="origin"]').value=''
-		form.querySelector('input[name="destination"]').value=''
-		form.querySelector('input[name="flightnumber"]').value=''
-	}
+        var rowElement = buttonElement.parentNode.parentNode 
+        var arrival = getArrivalFromRow(rowElement)
+        populateFormWithArrival(arrival)
+    }
 	
-	function getBookFromForm(){
-		var form = document.getElementById('createUpdateForm')
+    function doCreate(){
+        var form = document.getElementById('createUpdateForm')
 
-		var book = {}
-		book.id = form.querySelector('input[name="id"]').value
-		book.airline = form.querySelector('input[name="airline"]').value
-		book.origin = form.querySelector('input[name="origin"]').value
-		book.destination = form.querySelector('input[name="destination"]').value
-		book.flightnumebr = form.querySelector('input[name="flightnumber"]').value
-		//console.log(JSON.stringify(book))
-		return book
-	}
+        var arrival = {}
+       
+        arrival.airline = form.querySelector('input[name="airline"]').value
+        arrival.origin = form.querySelector('input[name="origin"]').value
+        arrival.destination = form.querySelector('input[name="destination"]').value
+		arrival.flightnumber = form.querySelector('input[name="flightnumber"]').value
+        console.log(JSON.stringify(arrival))
+        createArrival(arrival)
+        
+        
+    }
 	
-	function populateFormWithBook(book){
-		var form = document.getElementById('createUpdateForm')
-		form.querySelector('input[name="id"]').disabled = true
-		form.querySelector('input[name="id"]').value  = book.id
-		form.querySelector('input[name="airline"]').value= book.airline
-		form.querySelector('input[name="origin"]').value= book.origin
-		form.querySelector('input[name="destination"]').value= book.destination
-		form.querySelector('input[name="flightnumber"]').value= book.flightnumber
-}
-
-	function addBookToTable(book){
-		var tableElement = document.getElementById('bookTable')
-		var rowElement = tableElement.insertRow(-1)
-		
-		rowElement.setAttribute('id',book.id)
-		
-		var cell1 = rowElement.insertCell(0);
-		cell1.innerHTML = book.id
-		var cell2 = rowElement.insertCell(1);
-		cell2.innerHTML = book.airline
-		var cell3 = rowElement.insertCell(2);
-		cell3.innerHTML = book.origin
-		var cell4 = rowElement.insertCell(3);
-		cell4.innerHTML = book.destination
+    function doUpdate(){
+        var arrival = getArrivalFromForm();
+        var rowElement = document.getElementById(arrival.id);
+        updateArrival(arrival);
+        setArrivalInRow(rowElement,arrival);
+       
+        clearForm();
+        showViewAll();
+    }
+	
+    function doDelete(r){
+        var tableElement = document.getElementById('myTable');
+        var rowElement = r.parentNode.parentNode;
+        var index = rowElement.rowIndex;
+        deleteArrival(rowElement.getAttribute("id"));
+        tableElement.deleteRow(index);
+    }
+    function addArrivalToTable(arrival){
+        var tableElement = document.getElementById('myTable')
+        var rowElement = tableElement.insertRow(-1)
+        rowElement.setAttribute('id',arrival.id)
+        var cell1 = rowElement.insertCell(0);
+        cell1.innerHTML = arrival.id
+        var cell2 = rowElement.insertCell(1);
+        cell2.innerHTML = arrival.airline
+        var cell3 = rowElement.insertCell(2);
+        cell3.innerHTML = arrival.origin
+        var cell4 = rowElement.insertCell(3);
+        cell4.innerHTML = arrival.destination
 		var cell5 = rowElement.insertCell(4);
-		cell5.innerHTML = book.flightnumber
-		var cell6 = rowElement.insertCell(5);
-		cell6.innerHTML = '<button onclick="showUpdate(this)">Update</button>'
-		var cell7 = rowElement.insertCell(6);
-		cell7.innerHTML = '<button onclick=doDelete(this)>delete</button>'
+        cell5.innerHTML = arrival.flightnumber
+        var cell6 = rowElement.insertCell(5);
+        cell6.innerHTML = '<button onclick="showUpdate(this)">Update</button>'
+        var cell7 = rowElement.insertCell(6);
+        cell7.innerHTML = '<button onclick=doDelete(this)>Delete</button>'
 
-	}
+    }
+
+    function clearForm(){
+        var form = document.getElementById('createUpdateForm')
+
+        form.querySelector('input[name="airline"]').value=''
+        form.querySelector('input[name="origin"]').value=''
+        form.querySelector('input[name="destination"]').value=''		
+        form.querySelector('input[name="flightnumber"]').value=''
+    }
+    function getArrivalFromRow(rowElement){
+        var arrival ={}
+        arrival.id  = rowElement.getAttribute('id')
+        arrival.airline = rowElement.cells[1].firstChild.textContent
+        arrival.origin = rowElement.cells[2].firstChild.textContent
+        arrival.destination = rowElement.cells[3].firstChild.textContent
+		arrival.flightnumber = rowElement.cells[4].firstChild.textContent
+        return arrival
+    }
+    function setArrivalInRow(rowElement, arrival){
+        rowElement.cells[0].firstChild.textContent= arrival.id  
+        rowElement.cells[1].firstChild.textContent= arrival.airline
+        rowElement.cells[2].firstChild.textContent= arrival.origin
+        rowElement.cells[3].firstChild.textContent= arrival.destination
+		rowElement.cells[4].firstChild.textContent= arrival.flightnumber
+    }
+    function populateFormWithArrival(arrival){
+        var form = document.getElementById('createUpdateForm')
+        form.querySelector('input[name="id"]').disabled = true
+
+        form.querySelector('input[name="id"]').value  = arrival.id
+        form.querySelector('input[name="airline"]').value= arrival.airline
+        form.querySelector('input[name=origin"]').value= arrival.origin
+        form.querySelector('input[name="destination"]').value= arrival.destination
+		form.querySelector('input[name="flightnumber"]').value= arrival.flightnumber
+        return arrival
+    }
+    function getArrivalFromForm(){
+        var form = document.getElementById('createUpdateForm')
+        var arrival = {}
+        arrival.id = form.querySelector('input[name="id"]').value
+        arrival.airline = form.querySelector('input[name="airline"]').value
+        arrival.origin = form.querySelector('input[name="origin"]').value
+        arrival.destination = form.querySelector('input[name="destination"]').value
+		arrival.flightnumber = form.querySelector('input[name="flightnumber"]').value
+        console.log(JSON.stringify(arrival))
+        return arrival
+    }
+
+    
+
+
+
+
+// *******************************************************************************************************************8
+			// GET ALL ARRIVALS	
+			function getAll(){
+				$.ajax({
+					"url":"/arrivals",
+					"method":"GET",
+					"data":"",
+					"dataType":"JSON",
+					"success":function(result){
+						for (arrival of result){
+							addArrivalToTable(arrival);
+                }
+						//arrivalsArray = result
+						// Call function to build my table
+						//buildTable(arrivalsArray)
+						console.log(result)					
+					},
+					"error":function(xhr,status,error){
+						console.log("status:"+status+" message:"+error);
+					}
+				});
+			}
+			
+
+			// CREATE ARRIVAL
+			function createArrival(){
+				//console.log(JSON.stringify(arrival));
+				$.ajax({
+					"url": "http://sarahmcn25.pythonanywhere.com/arrivals/",
+					"method":"POST",
+					"data":JSON.stringify(arrival),
+					"dataType": "JSON",
+					contentType: "application/json; charset=utf-8",
+					"success":function(result){
+						//console.log(result);
+						arrival.id = result.id
+						addArrivalToTable(arrival)
+						clearForm()
+						showViewAll()
+					},
+					"error":function(xhr,status,error){
+						console.log("error: "+status+" msg:"+error);
+					}
+				});
+			}
+
+			// UDPATE ARRIVAL
+			function updateArrival(arrival){
+					
+				console.log(JSON.stringify(arrival));
+				$.ajax({
+					"url": "http://sarahmcn25.pythonanywhere.com/arrivals/"+encodeURI(arrival.id),
+					"method":"PUT",
+					"data":JSON.stringify(arrival),
+					"dataType": "JSON",
+					contentType: "application/json; charset=utf-8",
+					"success":function(result){
+					   // console.log(result);
+						  
+					},
+					"error":function(xhr,status,error){
+						console.log("error: "+status+" msg:"+error);
+					}
+				});
+			}
 	
-	function getBookFromRow(rowElement){
-		var book ={}
-		book.id  = rowElement.cells[0].firstChild.textContent
-		book.airline = rowElement.cells[1].firstChild.textContent
-		book.origin = rowElement.cells[2].firstChild.textContent
-		book.destination = rowElement.cells[3].firstChild.textContent
-		book.flightnumber = rowElement.cells[4].firstChild.textContent
-		return book
-	}
+			// DELETE ARRIVAL
+			function deleteArrival(id){
+				
+				//console.log(JSON.stringify('deleting '+id));
+				$.ajax({
+					"url": "http://sarahmcn25.pythonanywhere.com/arrivals/"+encodeURI(id),
+					"method":"DELETE",
+					"data":"",
+					"dataType": "JSON",
+					contentType: "application/json; charset=utf-8",
+					"success":function(result){
+						//console.log(result);
+						  
+					},
+					"error":function(xhr,status,error){
+						console.log("error: "+status+" msg:"+error);
+					}
+				});
+			}
+			
+			
+			// Calling main function
+			init()
+							
 	
-	function setBookInRow(rowElement, book){
-		rowElement.cells[0].firstChild.textContent= book.id  
-		rowElement.cells[1].firstChild.textContent= book.airline
-		rowElement.cells[2].firstChild.textContent= book.origin
-		rowElement.cells[3].firstChild.textContent= book.destination
-		rowElement.cells[4].firstChild.textContent= book.flightnumber
-}
-
-	function doCreate(){
-		console.log("creating a book")
-		book = getBookFromForm()
-		console.log(book)
-		addBookToTable(book)
-		showViewall()
-		clearForm()
-	}
-	
-	function doUpdate(){
-		book= getBookFromForm()
-		//console.log(book)
-		var rowElement = document.getElementById(book.id)
-		setBookInRow(rowElement, book)
-
-		showViewall()
-		clearForm()
-	}
-	
-	function doDelete(buttonElement){
-		console.log("in delete")
-		var tableElement = document.getElementById('bookTable')
-		var index = buttonElement.parentNode.parentNode.rowIndex;
-		tableElement.deleteRow(index);
-
-	}
-
 		
-	</script>
-
+		</script>	
+		
+    </body>	
+	
 </html>
